@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+
+
+<odoo>
+
+    <!-- Instock Action -->
+    <record id="instock_action" model="ir.actions.act_window">
+        <field name="name">Instock Action</field>
+        <field name="res_model">fuelstation.instock</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p>
+                Add new Stock here
+            </p>
+        </field>
+    </record>
+
+            <!-- IN Stock Tree View -->
+            <record id="instock_view_tree" model="ir.ui.view">
+                <field name="name">fuelstation.instock.view.tree</field>
+                <field name="model">fuelstation.instock</field>
+                <field name="arch" type="xml">
+                    <tree string="IN Stock">
+                        <field name="name" />
+                        <field name="date" />
+                        <field name="fuel_type" />
+                        <!-- <field name="fuel_qut" /> -->
+                        <field name="instock_qut" />
+                        <field name="updated_stock" />
+                    </tree>
+                </field>
+            </record>
+
+            <!-- In Stock Form View -->
+            <record id="instock_view_form" model="ir.ui.view">
+                <field name="name">fuelstation.instock.view.form</field>
+                <field name="model">fuelstation.instock</field>
+                <field name="arch" type="xml">
+                    <form string="In Stock">
+                        <sheet>
+                            <group>
+                                <field name="name" />
+                            <field name="date" />
+                            <field name="fuel_type" />
+                            <!-- <field name="fuel_qut" /> -->
+                            <field name="instock_qut" />
+                            <field name="updated_stock" />
+
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+
+        
+
+
+    <!-- Out Stock Action -->
+    <record id="outstock_action" model="ir.actions.act_window">
+        <field name="name">Outstock Action</field>
+        <field name="res_model">fuelstation.outstock</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p>
+                Add New Outstock here
+            </p>
+        </field>
+    </record>
+
+            <!-- Out Stock Tree View -->
+            <record id="outstock_view_tree" model="ir.ui.view">
+                <field name="name">fuelstation.outstock.view.tree</field>
+                <field name="model">fuelstation.outstock</field>
+                <field name="arch" type="xml">
+                    <tree string="Out Stock">
+                        <field name="name" />
+                        <field name="date" />
+                        <field name="fuel_type" />
+                        <field name="order_qut" />
+                        <field name="fuel_price" />
+                        <field name="avl_qut" />
+                        <!-- <field name="total_price" /> -->
+
+                    </tree>
+                </field>
+            </record>
+
+            <!-- Out Stock form view  -->
+            <record id="outstock_view_form" model="ir.ui.view">
+                <field name="name">fuelstation.outstock.view.form</field>
+                <field name="model">fuelstation.outstock</field>
+                <field name="arch" type="xml">
+                    <form string="Out Stock">
+                        <sheet>
+                            <group>
+                                <field name="name" />
+                                <field name="date" />
+                                <field name="fuel_type" />
+                                <field name="order_qut" />
+                                <field name="fuel_price" />
+                                <field name="avl_qut" />
+                                <!-- <field name="total_price" /> -->
+
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+
+            
+
+    <!-- Transection Record Action -->
+    <record id="transection_rec_action" model="ir.actions.act_window">
+        <field name="name">Transection Rec Action</field>
+        <field name="res_model">fuelstation.outstock</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p>
+                Add New Outstock in Outstock 
+            </p>
+        </field>
+    </record>
+
+            <!-- Transection record tree view -->
+            <record id="transection_rec_view_tree" model="ir.ui.view">
+                <field name="name">fuelstation.outstock.view.tree</field>
+                <field name="model">fuelstation.outstock</field>
+                <field name="arch" type="xml">
+                    <tree string="Transection Record">
+                        <field name="name" />
+                        <field name="date" />
+                        <field name="fuel_type" />
+                        <field name="order_qut" />
+                        <field name="fuel_price" />
+                    </tree>
+                </field>
+            </record>
+
+    <!-- Fuel Price Action -->
+    <record id="fuel_price_action" model="ir.actions.act_window">
+        <field name="name">Fuel Price Action</field>
+        <field name="res_model">fuelstation.fuelprice</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>
+                Add New Fuel Price here!
+            </p>
+        </field>
+    </record>
+
+            <!-- Fuel price tree views -->
+            <record id="fuelprice_view_tree" model="ir.ui.view">
+                <field name="name">fuelstation.fuelprice.view.tree</field>
+                <field name="model">fuelstation.fuelprice</field>
+                <field name="arch" type="xml">
+                    <tree string="Fuel Price">
+                        <field name="fuel_type" />
+                        <field name="fuel_price" />
+                    </tree>
+                </field>
+            </record>
+
+            <!-- Fuel price from view -->
+            <record id="fuelprice_view_form" model="ir.ui.view">
+                <field name="name">fuelstation.fuelprice.view.form</field>
+                <field name="model">fuelstation.fuelprice</field>
+                <field name="arch" type="xml">
+                    <form string="Fuel Price">
+                        <sheet>
+                            <group>
+                                <field name="fuel_type" />
+                                <field name="fuel_price" />
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+
+
+    <!-- Available Stock Action -->
+    <record id="avl_fuel_action" model="ir.actions.act_window">
+        <field name="name">Avl Stock Action</field>
+        <field name="res_model">fuelstation.avlstock</field>
+        <field name="view_mode">tree,form,graph</field>
+        <field name="help" type="html">
+            <p>
+                Add new stock !
+            </p>
+        </field>
+    </record>
+
+            <!-- Available Stock tree view -->
+            <record id="avlstock_view_tree" model="ir.ui.view">
+                <field name="name">fuelstation.avlstock.view.tree</field>
+                <field name="model">fuelstation.avlstock</field>
+                <field name="arch" type="xml">
+                    <tree string="Available Stock">
+                        <field name="fuel_type" />
+                        <field name="avl_qut" />
+                    </tree>
+                </field>
+            </record>
+
+            <!-- Available Stock form view -->
+            <record id="avlstock_view_form" model="ir.ui.view">
+                <field name="name">fuelstation.avlstock.view.form</field>
+                <field name="model">fuelstation.avlstock</field>
+                <field name="arch" type="xml">
+                    <form string="Available Stock">
+                        <sheet>
+                            <group>
+                                <field name="fuel_type" />
+                                <field name="avl_qut" />
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+
+            <!-- Available stock Graph view -->
+            <record id="avlstock_view_graph" model="ir.ui.view">
+                <field name="name">fuelstation.avlstock.view.graph</field>
+                <field name="model">fuelstation.avlstock</field>
+                <field name="arch" type="xml">
+                    <graph string="Available Stock Graph View" type="bar">
+                        <field name="fuel_type" />
+                        <field name="avl_qut" type="measure" />
+                    </graph>
+                </field>
+            </record>
+
+
+
+
+
+    
+    <!-- Root menu -->
+    <menuitem
+        id="fuelstation_main_menu"
+        name="SubStation Name"/>
+
+    <!-- main stock menu -->
+    <menuitem
+        id="fuel_stock_menu"
+        name="Fuel Stock"
+        groups="base.group_user"
+        parent="fuelstation_main_menu"
+        sequence="1"/>
+        <!-- action="action_id" -->
+
+            <!-- stock sub menus -->
+            <menuitem
+                id="fuel_outstock_menu"
+                name="Fuel Stock Out"
+                action="outstock_action"
+                parent="fuel_stock_menu"
+                sequence="1"/>
+
+            <menuitem
+                id="fuel_instock_menu"
+                name="Fuel Stock In"
+                action="instock_action"
+                parent="fuel_stock_menu"
+                sequence="2"/>
+
+    <!-- fuel transection record -->
+    <menuitem
+        id="fuel_transection_menu"
+        name="transection Record"
+        action="transection_rec_action"
+        groups="base.group_user"
+        parent="fuelstation_main_menu"
+        sequence="2"/>
+
+    <!-- fuel price  -->
+    <menuitem
+        id="fuel_price_menu"
+        name="Fuel Price"
+        action="fuel_price_action"
+        groups="base.group_user"
+        parent="fuelstation_main_menu"
+        sequence="3"/>
+    
+    <!-- available fuel quantity  -->
+    <menuitem
+        id="avl_fuel_menu"
+        name="Available Stock"
+        action="avl_fuel_action"
+        groups="base.group_user"
+        parent="fuelstation_main_menu"
+        sequence="4"/>
+
+       
+</odoo>
